@@ -169,6 +169,19 @@ function formatAddressHTML(addressRaw) {
   return lines.map((line) => `<div>${esc(line)}</div>`).join("");
 }
 
+function toggleDisclaimer() {
+  const text = document.getElementById("disclaimer-text");
+  const toggle = document.querySelector(".sea-toggle");
+
+  text.classList.toggle("expanded");
+
+  if (text.classList.contains("expanded")) {
+    toggle.textContent = "show less";
+  } else {
+    toggle.textContent = "... more";
+  }
+}
+
 function buildSalesPopupHTML(props) {
   const name = cleanValue(props.sale_name) ? esc(props.sale_name) : "Garage Sale";
   const typeText = isGarageSaleDay(props)
@@ -214,7 +227,16 @@ function buildSalesPopupHTML(props) {
         ${dateText ? rowHTML("Date:", `<span class="sea-text">${dateText}</span>`) : ""}
         ${scheduleText ? rowHTML("Schedule:", `<div class="sea-notes">${scheduleText}</div>`) : ""}
         ${notes ? rowHTML("Details:", `<div class="sea-notes">${notes}</div>`) : ""}
-        ${rowHTML("Disclaimer:", `<div class="sea-disclaimer">Disclaimer: This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know at scarbenvasc@gmail.com!</div>`)}
+        ${rowHTML(
+          "Disclaimer:",
+          `
+          <div class="sea-disclaimer-wrapper">
+            <div class="sea-disclaimer collapsed" id="disclaimer-text">
+              This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know at scarbenvasc@gmail.com!
+            </div>
+            <span class="sea-toggle" onclick="toggleDisclaimer()">... more</span>
+          </div>
+          `)}
         </div>
 
       ${
@@ -420,7 +442,8 @@ legendControl.onAdd = function () {
       <details class="legend-about">
         <summary class="legend-about-summary">About</summary>
         <div class="legend-about-body">
-         <p><a class="legend-link" href="${PROJECT.suggestionsUrl}" target="_blank" rel="noopener">Advertise Your Sale</a></p>
+         <p>This map is a project of the Scarborough Environmental Action team to help residents find local garage sales and decluttering events in Scarborough. It is built using Leaflet and OpenStreetMap data, and relies on community contributions to stay up to date.</p>
+         <p><a class="legend-link" href="${PROJECT.suggestionsUrl}" target="_blank" rel="noopener">Advertise Your Sale Here - Form</a></p>
           <p class="sea-disclaimer">Disclaimer: This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know!</p>
         </div>
       </details>

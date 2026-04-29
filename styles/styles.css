@@ -173,8 +173,27 @@ body {
   filter: drop-shadow(0 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
 }
 
-.sea-disclaimer{
-  color: darkred
+.sea-disclaimer {
+  max-height: 42px; /* adjust based on desired preview height */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.sea-disclaimer.expanded {
+  max-height: 500px;
+}
+
+.sea-toggle {
+  color: #007bff;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.sea-toggle:hover {
+  text-decoration: underline;
 }
 
 .sea-title {
