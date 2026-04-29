@@ -214,7 +214,8 @@ function buildSalesPopupHTML(props) {
         ${dateText ? rowHTML("Date:", `<span class="sea-text">${dateText}</span>`) : ""}
         ${scheduleText ? rowHTML("Schedule:", `<div class="sea-notes">${scheduleText}</div>`) : ""}
         ${notes ? rowHTML("Details:", `<div class="sea-notes">${notes}</div>`) : ""}
-      </div>
+        ${rowHTML("Disclaimer:", `<div class="sea-disclaimer">Disclaimer: This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know at scarbenvasc@gmail.com!</div>`)}
+        </div>
 
       ${
         directionsUrl || addressHtml
@@ -420,7 +421,7 @@ legendControl.onAdd = function () {
         <summary class="legend-about-summary">About</summary>
         <div class="legend-about-body">
          <p><a class="legend-link" href="${PROJECT.suggestionsUrl}" target="_blank" rel="noopener">Advertise Your Sale</a></p>
-          <p>If any locations or information is out of date, please email scarbenvasc@gmail.com and we will update it ASAP!</p>
+          <p class="sea-disclaimer">Disclaimer: This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know!</p>
         </div>
       </details>
     </div>
