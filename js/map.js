@@ -442,7 +442,7 @@ legendControl.onAdd = function () {
       <details class="legend-about">
         <summary class="legend-about-summary">About</summary>
         <div class="legend-about-body">
-         <p>This map is a project of the Scarborough Environmental Action team to help residents find local garage sales and decluttering events in Scarborough. It is built using Leaflet and OpenStreetMap data, and relies on community contributions to stay up to date.</p>
+         <p>This map is a project of the Scarborough Environmental Asc team to help residents find local garage sales and decluttering events in Scarborough. It is built using Leaflet and OpenStreetMap data, and relies on community contributions to stay up to date.</p>
          <p><a class="legend-link" href="${PROJECT.suggestionsUrl}" target="_blank" rel="noopener">Advertise Your Sale Here - Form</a></p>
           <p class="sea-disclaimer">Disclaimer: This map is populated using user-generated content. If you arrive at a location and find that the information is incorrect or outdated, please do not disturb homeowners and let us know!</p>
         </div>

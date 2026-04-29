@@ -174,16 +174,19 @@ body {
 }
 
 .sea-disclaimer {
-  max-height: 42px; /* adjust based on desired preview height */
+    color: darkred;
+  white-space: nowrap;
   overflow: hidden;
-  position: relative;
-  transition: max-height 0.3s ease;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
 }
 
 .sea-disclaimer.expanded {
-  max-height: 500px;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
 }
-
 .sea-toggle {
   color: #007bff;
   cursor: pointer;
