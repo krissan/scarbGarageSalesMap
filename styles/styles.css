@@ -177,7 +177,7 @@ body {
     color: darkred;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: hidden;
+  text-wrap: auto;
   width: 230px;
   display: block;
 }
