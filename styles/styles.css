@@ -174,12 +174,21 @@ body {
 }
 
 .sea-disclaimer {
-    color: darkred;
+  color: darkred;
   white-space: nowrap;
   overflow: hidden;
-  text-wrap: auto;
+  text-overflow: hidden;
   width: 230px;
   display: block;
+}
+
+.sea-disclaimer-legend {
+  color: darkred;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 230px;
+  display: block;
+  text-wrap: auto;
 }
 
 .sea-disclaimer.expanded {
